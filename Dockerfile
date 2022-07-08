@@ -34,14 +34,14 @@ RUN set -eux; \
 		intl \
 		zip \
 	; \
-	pecl install \
-		apcu-${APCU_VERSION} \
-	; \
-	pecl clear-cache; \
-	docker-php-ext-enable \
-		apcu \
-		opcache \
-	; \
+#	pecl install \
+#		apcu-${APCU_VERSION} \
+#	; \
+#	pecl clear-cache; \
+#	docker-php-ext-enable \
+#		apcu \
+#		opcache \
+#	; \
 	\
 	runDeps="$( \
 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
